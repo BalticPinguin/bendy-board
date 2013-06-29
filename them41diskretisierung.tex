@@ -1,14 +1,9 @@
 \section{Diskretisierung und Aufstellung des Gleichungssystems}
-Gegeben: Randwertaufgabe: $\frac{\partial ^2}{\partial x^2}u(x,y)+\frac{\partial ^2}{\partial y^2}u(x,y)=-k\,f(x,y)$ $x,y \in D
- $u(x,y)=0 \forall x,y \in \partial D$
-Die selbe Gleichung taucht auch als \glqq Poisson-Gleichung \grqq\, , eine Gleichung, welche XXX beschreibt, als beliebtes Beispiel in vielen b"uchern auf.
-
-Betrachte: $D=(0,a)\times (0,b)$ mit $a=n\,h$ $b=m\, h$ (konstante Schrittweite h, die in x- und y=Richtung gleich ist.)
-Nun wird das System diskretisiert:
-Nähere nun: $\frac{\partial u(x,y)}{\partial x} \approx \frac{u(x+h, y)-u(x-h,y)}{2h}$ (zentrale Differenzen) . Analog mit y. Hiermit folgt:
-$\frac{partial^2 u(x,y)}{\partial x^2}=\frac{u(x+h,y)+u(x-h,y)-2u(x,y)}{2h}$
-$\frac{partial^2 u(x,y)}{\partial y^2}=\frac{u(x,y+h)+u(x,y-h)-2u(x,y)}{2h}$
-analog wird $D_h=\{(x,y)\in D | x=nh, y=mh ; n,m \in \mathbb{Z}\} \parital D_h=\{(x,y) \in \partial D | x \in \{ nh, 0\} y= mh, m\in \mathbb{Z}; y \in \{0, mh\} x=nh, n\in \mathbb{Z}\}$. 
-Nun folgt die obige DGL: (in den Funktionen jew. mit Schrittweite h multiplizieren!!!
-$\frac{u(i+1,j)+u(i-1,j)-2u(i,j)}{h^2}+\frac{u(i,j+1)+u(i,j-1)-2u(i,j)}{h^2}=-k f(x,y)$ für $i,j \in D_h=\{(ih,jh)|i=1,...,n-1; j=1,...,m-1}$
-
+Da das gegebene Problem im Allgemeinen nicht analytisch lösbar ist, soll es im Folgenden numerisch gelöst werden. Hierfür wird der untersuchte Bereich $D$ durch konstante Schrittweiten $h$ diskretisiert, was uns zu der neuen Fläche führt, die von den Variablen $a=n\,h$ $b=m\, h$ aufgespannt wird. und nun als $D_h=\{(x,y)\in D | x=nh, y=mh ; n,m \in \mathbb{Z}\} \partial D_h=\{(x,y) \in \partial D | x \in \{ nh, 0\} y= mh, m\in \mathbb{Z}; y \in \{0, mh\} x=nh, n\in \mathbb{Z}\}$ geschrieben wird.
+An diese Diskretisierung wird nun die Differentialgleichung angepasst, indem die Ableitungen als mit der Methode der zentralen Differenzen aproximiert werden. Damit wird diese zu 
+\[\frac{\partial u(x,y)}{\partial x} \approx \frac{u(x+h, y)-u(x-h,y)}{2h}\]
+Analog sieht die Ableitung nach y aus. Hiermit folgt nun:\\
+\[\frac{\partial^2 u(x,y)}{\partial x^2}=\frac{u(x+h,y)+u(x-h,y)-2u(x,y)}{2h}\]
+\[\frac{\partial^2 u(x,y)}{\partial y^2}=\frac{u(x,y+h)+u(x,y-h)-2u(x,y)}{2h}\]
+Nun folgt die obige DGL: (in den Funktionen jew. mit Schrittweite h multiplizieren!!!)
+$\frac{u(i+1,j)+u(i-1,j)-2u(i,j)}{h^2}+\frac{u(i,j+1)+u(i,j-1)-2u(i,j)}{h^2}=-k f(x,y)$ für $i,j \in D_h=\{(ih,jh)|i=1,...,n-1; j=1,...,m-1$

@@ -21,8 +21,8 @@ case 4
    tmp1=e.^-(((j'-1.0)*8).^2.+((i-1.5)*8).^2);
 endswitch
 
-% figure; mesh(j,i,tmp1);
-% title('Gewichtsfunktion');
+figure; mesh(j,i,tmp1);
+title('Gewichtsfunktion');
 
 n=size(tmp1);
 tmp2=[zeros(n(1),1) tmp1 zeros(n(1),1)]; %F mit "0" umranden
