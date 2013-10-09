@@ -1,13 +1,13 @@
-function v= solution(s,f); %solving A^r*v=f
+function v= solution(r,f); %solving A^r*v=f
    x=y=2; %edge of area D in x and y-direction
    k=h=4; %the steps and dimensions are x/(2^(k+1)-1) and y/(2^(h+1)-1) .
-   v=foo(s,k,h,x,y)\f;
+   v=foo(r,k,h,x,y)\f;
 end
 
-function A=foo(s,k,h,x,y);
+function A=foo(r,k,h,x,y);
    A=fillA(k,h,x,y);
    I=eye(2^(h+1)-1);
-   for i=1:1:s
+   for i=1:1:r
       A=2*I-A^2;
    end
 end
