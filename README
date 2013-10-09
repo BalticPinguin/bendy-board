@@ -1,0 +1,7 @@
+This project is written for a numerical curse in university. It is about calculating the deformation of a plate, if a weight of a special form is placed on it. Because this is calculated with an easy poisson-equation, this code can be taken to calculate many other problems, where a solution of a poisson-equation is required.
+
+The files ending ".m" are, as usual, for matlab or octave (written for octave, hence I don't garantee for workin in matlab). At the moment do not use them! They all work correctly, but the problem is solved only using Gaus-Seidel-algorithm which is VERY bad for this problem.
+
+The files "them41___" do contain theoretical background [in german only] (or will contain it). At this state most information can be found in "Stichpunkte.tex". To get the text, please run in your latex-console "them41main.tex", the other documents (despite "Stichpunkte.tex" will be included.
+
+all data provided are published under GPL by Hubert Weissmann
