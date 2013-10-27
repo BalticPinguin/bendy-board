@@ -1,10 +1,10 @@
 function [f] = fillvect(x,y,k,h,num);
-p=2^(k+1)-2; %this is 1 element smaller than needed; because of creation of i,j
-q=2^(h+1)-2;
+p=2^(k+1)-3; %this is 1 element smaller than needed; because of creation of i,j
+q=2^(h+1)-3;
 k=x/q;
 h=y/p;
-i=h:h:y-h;%I don't want weight on the edge
-j=k:k:x-k;% now i,j have length p and q 
+i=linspace(h,x-h,q);
+j=linspace(k,x-k,p);
 
 switch num
 case 1

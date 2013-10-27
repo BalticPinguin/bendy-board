@@ -1,0 +1,31 @@
+method	|| max.rss kB	| (2,2,5,5)[s]	
+BCRopt	    65.483	   2.54689 	
+BCR	    65.643	   2.57340 
+vereinf	    66.300	   0.062404   quite faster than with sparse(); almost same memory
+diresol	 1.563.060	   151.67     
+
+0.10801*8 0.108684 0.11201*3
+  9.764
+
+0.092006 0.096006*5
+
+(2,2,6,6): vereinf: rcond=1.36e-19 ; time: 73.965s
+           vereinf, sparse:  time: 68.952 lsg2.png
+           BCRopt:  
+
+
+(2,2,7,7): vereinf: rcond=2.6e-21 ; time: 273s 
+           vereinf,sparse:  time: 248s lsg3.png
+
+(2,2,8,8): vereinf, sparse: time: 1134s
+ 
+
+6  verein: 0.85605  BCopt 12.133
+7  verein: 4.1683   BCopt 57.124 besser: 54.57
+8  verein: 27.266   BCopt 262.04
+9  verein: 191.91   BCopt 1234.3
+10 verein: 1486.3   BCopt 5885.0
+11 verein: 1.16e4   BCRopt 2.9e4 ?? Warum soo viel?
+
+
+it's becoming too thin!!!

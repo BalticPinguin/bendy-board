@@ -1,35 +1,25 @@
-function v= solution(r,f); %solving A^r*v=f
-   v=+sol(r,1,f); %solving tridiagonal systems
+function v= solution(delta,r,f); %solving A^r*v=f
+   v=sol(delta,r,1,f); %solving tridiagonal systems
    for i=2:1:2^r
-     v=v+sol(r,i,f); %solving tridiagonal systems
+     v=v.+sol(delta,r,i,f); %solving tridiagonal systems
    end
 end
 
-function s=sol(r,i,f); %solving (A-lambda I)x=f/lambda
-   lambda=2*cos((2*i-1)*pi/2^(r+1));
-   for j=1:1:i-1
-     f=f/(lambda-2*cos((2*j-1)*pi/2^(r+1)));
-   end
-   for j=i+1:1:2^r
-     f=f/(lambda-2*cos((2*j-1)*pi/2^(r+1)));
-   end
-   lambda=lambda-4;
-   tmp1=1/(lambda);
-   tmp2=f(1)/(lambda);
-   c=d=[];
+function f=sol(delta,r,i,f); %solving (A-mu I)x=f/mu   %%possible for unequal steps in x- and y-direction!!
+   mu=2*cos((2*i-1)*pi/2^(r+1));
+   j=[1:1:i-1 i+1:1:2^r];
+   f=f/prod((mu.-2.*cos((2.*j.-1).*pi./2^(r+1))));
    n=size(f)(1);
-   for i=2:1:n-1 %size of c
-      c=[ c; tmp1 ];
-      d=[ d; tmp2 ];
-      tmp2=(f(i)-tmp2)/(lambda-tmp1);
-      tmp1=1/(lambda-tmp1);
+   a=delta; %elements underneath the diag of A
+   b=mu-2*(delta+1); %this is diag(A); all elements are the same;
+   c=delta.*ones(size(f)); %temporary vector (elements over the diag of A 
+   c(1)=c(1)/b;
+   f(1)=f(1)/b;%starting to overwrite f first time to a temporary vector
+   for i=2:n-1; %is there a way to avoid this loop?
+     c(i)=c(i)/(b-c(i-1)*a); 
+     f(i)=(f(i)-f(i-1)*a)/(b-c(i-1)*a);
    end
-   c=[ c; tmp1 ];
-   d=[ d; tmp2 ];
-   tmp2=(f(i)-tmp2)/(lambda-tmp1);
-   d=[ d; tmp2 ];
-   s=d(n);
-   for i=n-1:-1:1
-      s=[d(i)-c(i)*s(1); s];
+   for i=n-1:-1:1  %is there a way to avoid this loop?
+     f(i)=f(i)-c(i)*f(i+1); %second overwriting of f to the solution-vector
    end
 end
