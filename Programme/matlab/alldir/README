@@ -1,0 +1,9 @@
+This directory contains all files existing. Because there are many versions of the program for testing several features, this might be quite confusing. But there is some principle:
+
+The files named XY_41.m are the main files where XY stands for the algorithm behind it.
+
+The files containing "print" in their name are functions for printing the outcome in a special way. Except of "optimal" these functions can be used for all versions.
+
+The files having "solution" or "solving" in the name are for solving the block-system A(r)u=f.
+
+and so on...

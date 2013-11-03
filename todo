@@ -3,8 +3,7 @@ direkt mit Gauß
 
 Aufwandanalyse (vergleiche Gauss, linsolve (etwas intelligenter; muss ich sehen, wo das gut einzubauen ist), eigenes Programm): cputime, etime, tic, toc, clock, flops
 
-there are said to be spare matrix-operators
-speed up by using compiled c-programs in the code
+use arrayfun !!!!! It speeds up!!!
 what is with parallel implementation?
 graphische Oberfl"ache
 

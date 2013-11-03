@@ -1,7 +1,9 @@
-This project is written for a numerical curse in university. It solves the poisson-equation numerically by using bunemann-algorithm.
+This project is written for a numerical curse in university. It solves the poisson-equation numerically by using the buneman-algorithm.
 The given application is to calculate the deformation of a plate if a weight of a special shape is placed on it. 
 
-The files ending ".m" are, as usual, for matlab or octave (written for octave, hence I don't garantee for workin in matlab). At the moment do not use them! They all work correctly, but the problem is solved only using Gaus-Seidel-algorithm which is VERY bad for this problem.
+The files ending ".m" are, as usual, for matlab or octave (different folders). Be careful with these programs!!! They are in different versions and some are made to show bad properties!
+If you want to use the code for applications, use "BCRopt" only!!! (or "optimal"). 
+Sorry for confusing code-mixtures and bad commenting; I will work on it!
 
 The files "them41main.pdf" contains theoretical background [in german only]. 
 
