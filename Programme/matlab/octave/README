@@ -1,0 +1,8 @@
+all code contained by these folders is considered to solve the Poisson-equation numerically in order to compute the deformation of a board with a weight on it. 
+But the programms do not all solve the programm correctly or sensefully:
+
+directsol: solution with Gauss' Algorithm; it is very slow and not precisely. This code ist just for comparison!
+noBuneman: not ready-coded (contains mistakes). Probably it will never be finished.
+BcrVereinfacht: solves the Poisson equation with the block-cyclic reduction using Bunemans Algorithm, but doesn't solve the subsystems well. This code is for comparison only!
+BCR: like BcrVereinfacht but uses a better system for solving the subsystems.
+BCRopt: This is optimized and contains feasible code! It computes resiliant results. This is the main programm.
